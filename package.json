@@ -1,0 +1,11 @@
+{
+  "name": "testpackage",
+  "version": "1.0.0",
+  "description": "Test package for validating contacts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mustafa",
+  "license": "ISC"
+}
