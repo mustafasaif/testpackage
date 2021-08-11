@@ -1,15 +1,14 @@
 {
-  "name": "testpackage",
+  "name": "testpackage321",
   "version": "1.0.0",
   "description": "Test package for validating contacts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mustafasaif/testpackage.git"
-  },
-  "author": "mustysaif",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
 }

@@ -1,8 +1,24 @@
-module.exports = checkFileType = (fileExtension) => {
-    if (fileExtension.includes("csv") || fileExtension.includes("xlsx")) {
-        console.log("True");
-        return true;
-      
+const {
+  checkFileType,
+  checkFileHeaders,
+  fileContent
+} = require("./file.validate.functions");
+
+ uploadfile = async (filename) => {
+  if (filename) {
+    fileTypeCheckResults = await checkFileType(filename);
+    console.log({fileTypeCheckResults});
+    if (fileTypeCheckResults) {
+      fileHeadersCheckResults = await checkFileHeaders(filename);
+      console.log({fileHeadersCheckResults});
     }
-    console.log("INVALID FILE FORMAT");
-  };
+    if(fileHeadersCheckResults){
+      const contacts = await fileContent(filename)
+      console.log(contacts);
+    }
+  }
+};
+
+uploadfile("/home/mustafa/Desktop/data.csv");
+
+//module.exports = checkFileType;
