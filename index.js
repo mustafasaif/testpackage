@@ -3,6 +3,7 @@ const {
   checkFileHeaders,
   fileContent
 } = require("./file.validate.functions");
+const contactJoiSchemas = require('./utils/file.field.validate');
 
  uploadfile = async (filename) => {
   if (filename) {
@@ -14,11 +15,12 @@ const {
     }
     if(fileHeadersCheckResults){
       const contacts = await fileContent(filename)
-      console.log(contacts);
+      //console.log(contacts);
+      contactJoiSchemas(contacts)
     }
   }
 };
 
-uploadfile("/home/mustafa/Desktop/data.csv");
+uploadfile("/home/mustafa/Desktop/data-2.csv");
 
 //module.exports = checkFileType;
