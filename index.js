@@ -1,26 +1,26 @@
 const {
   checkFileType,
   checkFileHeaders,
-  fileContent
+  fileContent,
 } = require("./file.validate.functions");
-const contactJoiSchemas = require('./utils/file.field.validate');
+const contactJoiSchemas = require("./utils/file.field.validate");
 
- uploadfile = async (filename) => {
+uploadfile = async (filename) => {
   if (filename) {
     fileTypeCheckResults = await checkFileType(filename);
-    console.log({fileTypeCheckResults});
+    console.log({ fileTypeCheckResults });
     if (fileTypeCheckResults) {
       fileHeadersCheckResults = await checkFileHeaders(filename);
-      console.log({fileHeadersCheckResults});
+      console.log({ fileHeadersCheckResults });
     }
-    if(fileHeadersCheckResults){
-      const contacts = await fileContent(filename)
+    if (fileHeadersCheckResults) {
+      const contacts = await fileContent(filename);
       //console.log(contacts);
-      contactJoiSchemas(contacts)
+      contactJoiSchemas(contacts);
     }
   }
 };
 
 uploadfile("/home/mustafa/Desktop/data-2.csv");
 
-//module.exports = checkFileType;
+module.exports = uploadfile;
