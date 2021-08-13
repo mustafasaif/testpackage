@@ -21,6 +21,7 @@ const {
       console.log("ValidContacts: ", validContacts.length);
       const InvalidContacts = await getInvalidContacts(withoutSpace);
       console.log("InvalidContacts: ", InvalidContacts.length);
+      return (duplicates,withoutDuplicate,withoutSpace,validContacts,InvalidContacts);
     } catch (err) {
       console.log(err);
     }

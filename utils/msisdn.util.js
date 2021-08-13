@@ -15,26 +15,26 @@ const { parsePhoneNumberFromString } = require("libphonenumber-js");
  * @returns {String} calling prefix
  *
  */
-const getCallingPrefix = (msisdn) => {
-  msisdn = msisdn.toString();
-  const phoneObj = parsePhoneNumberFromString(
-    msisdn.match(/^\+/) ? msisdn : `+${msisdn}`
-  );
+// const getCallingPrefix = (msisdn) => {
+//   msisdn = msisdn.toString();
+//   const phoneObj = parsePhoneNumberFromString(
+//     msisdn.match(/^\+/) ? msisdn : `+${msisdn}`
+//   );
 
-  const prefix = phoneObj.countryCallingCode; //  + msisdn.substring(phoneObj.countryCallingCode.length).substring(0, 2);
+//   const prefix = phoneObj.countryCallingCode; //  + msisdn.substring(phoneObj.countryCallingCode.length).substring(0, 2);
 
-  return prefix;
-};
+//   return prefix;
+// };
 
-const getNetworkPrefix = (msisdn) => {
-  msisdn = msisdn.toString();
-  const callingPrefix = getCallingPrefix(msisdn);
-  const withoutPlus = msisdn
-    .replace("+", "")
-    .substr(callingPrefix.length)
-    .substr(0, 2);
-  return callingPrefix + withoutPlus;
-};
+// const getNetworkPrefix = (msisdn) => {
+//   msisdn = msisdn.toString();
+//   const callingPrefix = getCallingPrefix(msisdn);
+//   const withoutPlus = msisdn
+//     .replace("+", "")
+//     .substr(callingPrefix.length)
+//     .substr(0, 2);
+//   return callingPrefix + withoutPlus;
+// };
 
 // /**
 //  *
@@ -65,23 +65,21 @@ const trimMsisdn = (msisdn) => {
       return msisdn;
     }
   }
-
-  // return msisdn;
 };
 
-const appendCountryPrefix = (mobileNumber, prefix) => {
-  // if less than 10digits
-  if (mobileNumber.length < 10) {
-    mobileNumber = prefix + mobileNumber.replace(/^0+/, "");
-  }
+// const appendCountryPrefix = (mobileNumber, prefix) => {
+//   // if less than 10digits
+//   if (mobileNumber.length < 10) {
+//     mobileNumber = prefix + mobileNumber.replace(/^0+/, "");
+//   }
 
-  // if leading 0
-  if (/^0+/.test(mobileNumber)) {
-    mobileNumber = prefix + mobileNumber.replace(/^0+/, "");
-  }
+//   // if leading 0
+//   if (/^0+/.test(mobileNumber)) {
+//     mobileNumber = prefix + mobileNumber.replace(/^0+/, "");
+//   }
 
-  return mobileNumber;
-};
+//   return mobileNumber;
+// };
 
 /**
  *
@@ -102,9 +100,9 @@ const isValidMsisdn = (msisdn) => {
 };
 
 module.exports = {
-  getCallingPrefix,
+  //getCallingPrefix,
   isValidMsisdn,
-  getNetworkPrefix,
+  //getNetworkPrefix,
   trimMsisdn,
-  appendCountryPrefix,
+  //appendCountryPrefix,
 };
