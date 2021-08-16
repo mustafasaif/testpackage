@@ -1,46 +1,46 @@
 /* eslint-disable no-param-reassign */
 const { isValidMsisdn, trimMsisdn } = require("./msisdn.util");
 
-module.exports.getValidContacts = (arrContacts) =>
-  Promise.resolve(
-    arrContacts.filter((phone) =>
-      [phone].find((mob) =>
-        isValidMsisdn(trimMsisdn(mob.mob_no)) ? phone : null
-      )
-    )
-  );
+// module.exports.getValidContacts = (arrContacts) =>
+//   Promise.resolve(
+//     arrContacts.filter((phone) =>
+//       [phone].find((mob) =>
+//         isValidMsisdn(trimMsisdn(mob.mob_no)) ? phone : null
+//       )
+//     )
+//   );
 
-module.exports.getInvalidContacts = (arrContacts) =>
-  Promise.resolve(
-    arrContacts.filter((phone) =>
-      [phone].find((mob) =>
-        !isValidMsisdn(trimMsisdn(mob.mob_no)) ? phone : null
-      )
-    )
-  );
+// module.exports.getInvalidContacts = (arrContacts) =>
+//   Promise.resolve(
+//     arrContacts.filter((phone) =>
+//       [phone].find((mob) =>
+//         !isValidMsisdn(trimMsisdn(mob.mob_no)) ? phone : null
+//       )
+//     )
+//   );
 
-module.exports.getRemoveSpace = (arrContacts) =>
-  arrContacts.reduce((acc, item, _) => {
-    item.mob_no = trimMsisdn(item.mob_no);
-    acc.push(item);
-    //console.log(item.mob_no);
-    return acc;
-  }, []);
+// module.exports.getRemoveSpace = (arrContacts) =>
+//   arrContacts.reduce((acc, item, _) => {
+//     item.mob_no = trimMsisdn(item.mob_no);
+//     acc.push(item);
+//     //console.log(item.mob_no);
+//     return acc;
+//   }, []);
 
-// THESE ARE NEWLY ADDED FUNCTIONS FOR FILTERING
+// // THESE ARE NEWLY ADDED FUNCTIONS FOR FILTERING
 
-module.exports.removeDuplicateContacts = (arrContacts) => {
-  const duplicates = this.getDuplicateContacts(arrContacts);
-  let withoutDuplicates = arrContacts;
-  //console.log(withoutDuplicates);
-  duplicates.forEach((duplicate) => {
-    const deleteIndex = withoutDuplicates.findIndex(
-      (contact) => contact.mob_no === duplicate
-    );
-    withoutDuplicates.splice(deleteIndex, 1);
-  });
-  return withoutDuplicates;
-};
+// module.exports.removeDuplicateContacts = (arrContacts) => {
+//   const duplicates = this.getDuplicateContacts(arrContacts);
+//   let withoutDuplicates = arrContacts;
+//   //console.log(withoutDuplicates);
+//   duplicates.forEach((duplicate) => {
+//     const deleteIndex = withoutDuplicates.findIndex(
+//       (contact) => contact.mob_no === duplicate
+//     );
+//     withoutDuplicates.splice(deleteIndex, 1);
+//   });
+//   return withoutDuplicates;
+// };
 
 const getDuplicateContacts = (arrContacts) => {
   const initialArray = arrContacts.map((data) => data.mob_no);
