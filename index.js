@@ -8,7 +8,7 @@ const contactJoiSchemas = require("./utils/file.field.validate");
 uploadfile = async (filename) => {
   try {
     if (filename) {
-      fileTypeCheckResults = await checkFileType(filename);
+      fileTypeCheckResults = checkFileType(filename);
       console.log({ fileTypeCheckResults });
       if (fileTypeCheckResults) {
         fileHeadersCheckResults = await checkFileHeaders(filename);
@@ -17,9 +17,9 @@ uploadfile = async (filename) => {
         console.log("Invalid File Extension");
       }
       if (fileHeadersCheckResults) {
-        const contacts = await fileContent(filename);
-        //console.log(contacts);
-        contactJoiSchemas(contacts);
+        return true
+        // const contacts = await fileContent(filename);
+        // console.log(contacts);
       } else {
         console.log("Invalid Header Names");
       }
@@ -31,6 +31,5 @@ uploadfile = async (filename) => {
   }
 };
 
- uploadfile("/home/mustafa/Desktop/data-valid.csv");
-
+uploadfile("/home/mustafa/Desktop/data-valid.csv");
 module.exports = uploadfile;
