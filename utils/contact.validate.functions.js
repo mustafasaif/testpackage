@@ -42,7 +42,7 @@ module.exports.removeDuplicateContacts = (arrContacts) => {
   return withoutDuplicates;
 };
 
-module.exports.getDuplicateContacts = (arrContacts) => {
+const getDuplicateContacts = (arrContacts) => {
   const initialArray = arrContacts.map((data) => data.mob_no);
   const sortedArray = initialArray.slice().sort();
   // console.log(sortedArray);
@@ -53,4 +53,8 @@ module.exports.getDuplicateContacts = (arrContacts) => {
     }
   }
   return finalArray;
+};
+
+module.exports = {
+  getDuplicateContacts,
 };
