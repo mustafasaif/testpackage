@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const validatedcontact = require('../utils/contact.validate')
+const validatedcontact = require("../utils/contact.validate");
 const schema = Joi.object({
   mob_no: Joi.alternatives(
     Joi.string().pattern(/^[0-9]+$/, "numbers"),
@@ -35,7 +35,7 @@ const schema = Joi.object({
 let services = Joi.array().items(schema);
 const contactJoiSchemas = (ArrContacts) => {
   let test = services.validate(ArrContacts);
-   //console.log(test.value);
-   validatedcontact(test.value)
+  return test.value;
+  //  validatedcontact(test.value)
 };
 module.exports = contactJoiSchemas;
