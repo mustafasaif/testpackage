@@ -30,5 +30,5 @@ uploadfile = async (filename) => {
   }
 };
 
-uploadfile("/home/mustafa/Desktop/data-valid.csv");
+// uploadfile("/home/mustafa/Desktop/data-valid.csv");
 module.exports = uploadfile;
