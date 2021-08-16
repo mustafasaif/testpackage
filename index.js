@@ -17,8 +17,7 @@ uploadfile = async (filename) => {
         console.log("Invalid File Extension");
       }
       if (fileHeadersCheckResults) {
-        return true
-        // const contacts = await fileContent(filename);
+        const contacts = await fileContent(filename);
         // console.log(contacts);
       } else {
         console.log("Invalid Header Names");
