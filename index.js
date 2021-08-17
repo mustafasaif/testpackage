@@ -2,9 +2,9 @@ const {
   checkFileType,
   checkFileHeaders,
   fileContent,
-} = require("./file.validate.functions");
-const { getDuplicateContacts } = require("./utils/contact.validate.functions");
-const contactJoiSchemas = require("./utils/file.field.validate");
+} = require("./utils/file.validate.functions");
+// const { getDuplicateContacts,getRemoveSpace ,getValidContacts} = require("./utils/contact.validate.functions");
+// const contactJoiSchemas = require("./utils/file.field.validate");
 
 uploadfile = async (filename) => {
   try {
@@ -18,10 +18,13 @@ uploadfile = async (filename) => {
         console.log("Invalid File Extension");
       }
       if (fileHeadersCheckResults) {
-         const contacts = await fileContent(filename);
-         const gets = await getDuplicateContacts(contacts)
-         console.log(gets);
-        // console.log(contacts);
+        //  const contacts = await fileContent(filename);
+        //  const gets = await getDuplicateContacts(contacts);
+        //  const gets2 = await getRemoveSpace(contacts);
+        //  const gets3 = await getValidContacts(contacts);
+        //  console.log(gets.length);
+        //  console.log(gets3.length);
+        // // console.log(contacts);
       } else {
         console.log("Invalid Header Names");
       }

@@ -5,7 +5,6 @@ checkFileType = (fileExtension) => {
   if (fileExtension.includes("csv") || fileExtension.includes("xlsx")) {
     return true;
   }
-  console.log("INVALID FILE FORMAT");
 };
 parseFileHeaders = (path) => {
   let results;
