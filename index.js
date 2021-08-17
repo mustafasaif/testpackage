@@ -2,8 +2,6 @@ const {
   checkFileType,
   checkFileHeaders,
 } = require("./utils/file.validate.functions");
-//  const { getDuplicateContacts,getRemoveSpace ,getValidContacts, removeDuplicateContacts} = require("./utils/contact.validate.functions");
-//  const contactJoiSchemas = require("./utils/file.field.validate");
 
 uploadfile = async (filename) => {
   try {
@@ -27,5 +25,4 @@ uploadfile = async (filename) => {
   }
 };
 
-uploadfile("/home/mustafa/Desktop/data-valid.csv");
 module.exports = uploadfile;
