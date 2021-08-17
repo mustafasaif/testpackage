@@ -9,12 +9,12 @@ uploadfile = async (filename) => {
   try {
     if (filename) {
       fileTypeCheckResults = checkFileType(filename);
-      //console.log({ fileTypeCheckResults });
+      console.log({ fileTypeCheckResults });
       if (fileTypeCheckResults) {
         fileHeadersCheckResults = await checkFileHeaders(filename);
-        //console.log({ fileHeadersCheckResults });
+        console.log({ fileHeadersCheckResults });
       } else {
-        return("Invalid File Extension");
+        console.log("Invalid File Extension");
       }
       if (fileHeadersCheckResults) {
         //  const contacts = await fileContent(filename);
@@ -29,15 +29,15 @@ uploadfile = async (filename) => {
         // // // console.log(contacts);
         return true;
       } else {
-        return ("Invalid Header Names");
+        console.log("Invalid Header Names");
       }
     } else {
-      return("No File Path Defined");
+      console.log("No File Path Defined");
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-uploadfile("/home/mustafa/Desktop/data-invalid.csv");
+uploadfile("/home/mustafa/Desktop/data-valid.csv");
 module.exports = uploadfile;
