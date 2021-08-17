@@ -3,26 +3,27 @@ const {
   checkFileHeaders,
 } = require("./utils/file.validate.functions");
 
-uploadfile = async (filename) => {
+uploadfile = async (filename, done) => {
   try {
     if (filename) {
       fileTypeCheckResults = checkFileType(filename);
       if (fileTypeCheckResults) {
         fileHeadersCheckResults = await checkFileHeaders(filename);
       } else {
-        console.log("Error => Invalid File Extension");
+        throw Error("Invalid File Extension");
       }
       if (fileHeadersCheckResults) {
         return true;
       } else {
-        console.log("Error => Invalid Header Names");
+        throw Error("Invalid Header Names");
       }
     } else {
-      console.log("Error => No File Path Defined");
+      throw Error("No File Path Defined");
     }
   } catch (error) {
     console.log(error);
   }
 };
+uploadfile("/home/mustafa/Desktop/data-invalid.sv");
 
 module.exports = uploadfile;

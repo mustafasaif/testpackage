@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const schema = Joi.object({
   mob_no: Joi.alternatives(
-    Joi.string().pattern(/^[0-9]+$/, "numbers"),
+    Joi.string().pattern(/^[0-9\s]+$/, "numbers"),
     Joi.number()
   ).required(),
   first_name: Joi.alternatives(
