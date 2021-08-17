@@ -2,7 +2,7 @@ const csv = require("csv-parser");
 const fs = require("fs");
 
 checkFileType = (fileExtension) => {
-  if (fileExtension.includes("csv") || fileExtension.includes("xlsx")) {
+  if (fileExtension.includes(".csv") || fileExtension.includes(".xlsx")) {
     return true;
   }
 };

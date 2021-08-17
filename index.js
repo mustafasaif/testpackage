@@ -29,7 +29,8 @@ uploadfile = async (filename) => {
         // // // console.log(contacts);
         return true;
       } else {
-        console.log("Invalid Header Names");
+        return ("Invalid Header Names");
+        // console.log("Invalid Header Names");
       }
     } else {
       console.log("No File Path Defined");
@@ -39,5 +40,5 @@ uploadfile = async (filename) => {
   }
 };
 
-uploadfile("/home/mustafa/Desktop/data-valid.csv");
+uploadfile("/home/mustafa/Desktop/data-invalid.csv");
 module.exports = uploadfile;
