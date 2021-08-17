@@ -24,6 +24,5 @@ uploadfile = async (filename, done) => {
     console.log(error);
   }
 };
-uploadfile("/home/mustafa/Desktop/data-invalid.sv");
 
 module.exports = uploadfile;
