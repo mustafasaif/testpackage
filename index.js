@@ -25,6 +25,7 @@ uploadfile = async (filename) => {
         //  console.log(gets.length);
         //  console.log(gets3.length);
         // // console.log(contacts);
+        return true;
       } else {
         console.log("Invalid Header Names");
       }
