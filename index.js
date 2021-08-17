@@ -1,10 +1,9 @@
 const {
   checkFileType,
   checkFileHeaders,
-  fileContent,
 } = require("./utils/file.validate.functions");
-// const { getDuplicateContacts,getRemoveSpace ,getValidContacts} = require("./utils/contact.validate.functions");
-// const contactJoiSchemas = require("./utils/file.field.validate");
+//  const { getDuplicateContacts,getRemoveSpace ,getValidContacts, removeDuplicateContacts} = require("./utils/contact.validate.functions");
+//  const contactJoiSchemas = require("./utils/file.field.validate");
 
 uploadfile = async (filename) => {
   try {
@@ -19,12 +18,15 @@ uploadfile = async (filename) => {
       }
       if (fileHeadersCheckResults) {
         //  const contacts = await fileContent(filename);
-        //  const gets = await getDuplicateContacts(contacts);
-        //  const gets2 = await getRemoveSpace(contacts);
-        //  const gets3 = await getValidContacts(contacts);
-        //  console.log(gets.length);
-        //  console.log(gets3.length);
-        // // console.log(contacts);
+        //  //console.log(contacts);
+        //   const gets = await getDuplicateContacts(contacts);
+        //   const gets4 = await removeDuplicateContacts(contacts,gets);
+        //   console.log(gets4.length);
+        // //  const gets2 = await getRemoveSpace(contacts);
+        // //  const gets3 = await getValidContacts(contacts);
+        //   console.log(gets.length);
+        // //  console.log(gets3.length);
+        // // // console.log(contacts);
         return true;
       } else {
         console.log("Invalid Header Names");
@@ -37,5 +39,5 @@ uploadfile = async (filename) => {
   }
 };
 
- uploadfile("/home/mustafa/Desktop/data-valid.csv");
+uploadfile("/home/mustafa/Desktop/data-valid.csv");
 module.exports = uploadfile;

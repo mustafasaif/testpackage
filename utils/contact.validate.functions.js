@@ -29,10 +29,9 @@ const getRemoveSpace = (arrContacts) =>
 
 // // THESE ARE NEWLY ADDED FUNCTIONS FOR FILTERING
 
-const removeDuplicateContacts = (arrContacts) => {
-  const duplicates = this.getDuplicateContacts(arrContacts);
+const removeDuplicateContacts = (arrContacts, duplicate) => {
+  const duplicates = duplicate;
   let withoutDuplicates = arrContacts;
-  //console.log(withoutDuplicates);
   duplicates.forEach((duplicate) => {
     const deleteIndex = withoutDuplicates.findIndex(
       (contact) => contact.mob_no === duplicate
@@ -45,7 +44,6 @@ const removeDuplicateContacts = (arrContacts) => {
 const getDuplicateContacts = (arrContacts) => {
   const initialArray = arrContacts.map((data) => data.mob_no);
   const sortedArray = initialArray.slice().sort();
-  // console.log(sortedArray);
   let finalArray = [];
   for (let index = 0; index < sortedArray.length - 1; index++) {
     if (sortedArray[index + 1] === sortedArray[index]) {
